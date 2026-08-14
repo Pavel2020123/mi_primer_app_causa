@@ -1,0 +1,47 @@
+[
+  {
+    "id": "eve-001",
+    "nombre": "Festival de Patinaje Valledupar",
+    "descripcion": "Evento deportivo de patinaje organizado para deportistas de diferentes escuelas.",
+    "ubicacion": {
+      "latitud": 10.4631,
+      "longitud": -73.2532,
+      "lugar": "Patinódromo Municipal de Valledupar"
+    },
+    "fecha": "2026-08-20T19:00:00Z",
+    "estado": {
+      "tipo": "programado",
+      "publicadoEn": "2026-08-10T15:00:00Z"
+    }
+  },
+  {
+    "id": "eve-002",
+    "nombre": "Entrenamiento Interclubes",
+    "descripcion": "Jornada de entrenamiento entre diferentes escuelas de patinaje.",
+    "ubicacion": {
+      "latitud": 10.4765,
+      "longitud": -73.2501,
+      "lugar": "Complejo Deportivo La Gota Fría"
+    },
+    "fecha": "2026-08-14T20:00:00Z",
+    "estado": {
+      "tipo": "en_curso",
+      "iniciadoEn": "2026-08-14T19:30:00Z"
+    }
+  },
+  {
+    "id": "eve-003",
+    "nombre": "Competencia Departamental de Patinaje",
+    "descripcion": "Competencia departamental para deportistas de diferentes categorías.",
+    "ubicacion": {
+      "latitud": 10.4552,
+      "longitud": -73.2654,
+      "lugar": "Patinódromo El Novalito"
+    },
+    "fecha": "2026-08-09T18:00:00Z",
+    "estado": {
+      "tipo": "cancelado",
+      "motivo": "Condiciones climáticas desfavorables."
+    }
+  }
+]
