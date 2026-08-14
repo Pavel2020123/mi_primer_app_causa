@@ -1,20 +1,62 @@
-# mi_primer_app_causa
+# Rolla — Dominio de Eventos
 
-A new Flutter project.
+Proyecto desarrollado para el laboratorio E02 de modelado del dominio.
 
-## Getting Started
+El proyecto modela el dominio de **eventos deportivos de Rolla**, una plataforma 
+orientada a la gestión e información de eventos de patinaje. El objetivo de este 
+laboratorio es construir un dominio independiente de Flutter, con validación de 
+datos JSON, estados sellados, reglas de negocio, pruebas automatizadas y una 
+implementación de datos local.
 
-This project is a starting point for a Flutter application.
+## El dominio
 
-A few resources to get you started if this is your first Flutter project:
+- `Evento` — entidad principal. Su identidad está determinada por `id`.
+- `Ubicacion` — objeto de valor que representa el lugar del evento.
+- `EstadoEvento` — jerarquía sellada que representa los diferentes estados de un evento.
+- `EventosRepository` — contrato que define cómo se obtienen los eventos.
+- `EventosLocales` — implementación que obtiene los eventos desde un archivo JSON local.
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Decisión de modelado
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+El modelo usa `freezed` para generar igualdad, copyWith, hashCode y toString,
+pero mantiene el `fromJson` escrito a mano con `CampoInvalido` para conservar
+mensajes de error que nombran el campo exacto que falla.
 
-## Flutter doctor screenshot
-<img width="839" height="206" alt="image" src="https://github.com/user-attachments/assets/83b1f4bd-ce4d-436a-bdf7-649a03148708" />
+## Estructura
+
+```text
+lib/
+├── core/
+│   ├── comparaciones.dart
+│   └── json.dart
+│
+├── features/
+│   └── eventos/
+│       ├── domain/
+│       │   ├── estado_evento.dart
+│       │   ├── evento.dart
+│       │   ├── eventos_repository.dart
+│       │   └── ubicacion.dart
+│       │
+│       ├── data/
+│       │   └── eventos_locales.dart
+│       │
+│       └── presentation/
+│
+└── main.dart
+
+assets/
+└── data/
+    └── eventos.json
+
+test/
+├── data/
+└── domain/
+
+
+## Cómo correrlo
+
+```bash
+flutter pub get
+flutter test
+flutter run
