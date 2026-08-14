@@ -22,6 +22,15 @@ El modelo usa `freezed` para generar igualdad, copyWith, hashCode y toString,
 pero mantiene el `fromJson` escrito a mano con `CampoInvalido` para conservar
 mensajes de error que nombran el campo exacto que falla.
 
+
+
+## Cómo correrlo
+
+```bash
+flutter pub get
+flutter test
+flutter run
+
 ## Estructura
 
 ```text
@@ -54,9 +63,3 @@ test/
 └── domain/
 
 
-## Cómo correrlo
-
-```bash
-flutter pub get
-flutter test
-flutter run
